@@ -108,22 +108,22 @@ if run:
 
         fig = go.Figure()
 
-    fig.add_trace(go.Scatter3d(
-        x=x, y=y, z=z,
-        mode='lines+markers',
-        marker=dict(
-        size=6,
-        color=np.arange(len(x)),
-        colorscale='Turbo'
-    ),
-    line=dict(width=6),
-    text=texts,
-    hovertemplate="""
-    <b>Message:</b><br>%{text}<br>
-    <b>Index:</b> %{marker.color}
-    <extra></extra>
-    """
-))
+        fig.add_trace(go.Scatter3d(
+            x=x, y=y, z=z,
+            mode='lines+markers',
+            marker=dict(
+            size=6,
+            color=np.arange(len(x)),
+            colorscale='Turbo'
+        ),
+        line=dict(width=6),
+        text=texts,
+        hovertemplate="""
+        <b>Message:</b><br>%{text}<br>
+        <b>Index:</b> %{marker.color}
+        <extra></extra>
+        """
+    ))
 
         fig.update_layout(
             paper_bgcolor="rgba(0,0,0,0)",
