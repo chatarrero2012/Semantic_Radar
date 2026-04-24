@@ -108,21 +108,15 @@ if run:
 
         fig = go.Figure()
 
+        labels = [t[:20] + "..." if len(t) > 20 else t for t in texts]
+
         fig.add_trace(go.Scatter3d(
             x=x, y=y, z=z,
-            mode='lines+markers',
-            marker=dict(
-                size=6,
-                color=np.arange(len(x)),
-                colorscale='Turbo'
-            ),
-            line=dict(width=6),
-            text=texts,
-            hovertemplate="""
-            <b>Message:</b><br>%{text}<br>
-            <b>Index:</b> %{marker.color}
-            <extra></extra>
-            """
+            mode='lines+markers+text',
+            text=labels,
+            textposition="top center",
+            marker=dict(size=5),
+            line=dict(width=5)
         ))
 
         st.plotly_chart(fig, use_container_width=True)
