@@ -108,11 +108,10 @@ if run:
 
         fig = go.Figure()
 
-        fig.add_trace(
-            go.Scatter3d(
-                x=x, y=y, z=z,
-                mode='lines+markers',
-                marker=dict(
+        fig.add_trace(go.Scatter3d(
+            x=x, y=y, z=z,
+            mode='lines+markers',
+            marker=dict(
                 size=6,
                 color=np.arange(len(x)),
                 colorscale='Turbo'
